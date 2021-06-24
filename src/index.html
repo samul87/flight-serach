@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Rezerwacja lotów</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="/" style="color: white"
+          ><i class="fas fa-home" color="white"></i>Home</a
+        >
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-sliders-h"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                data-toggle="modal"
+                data-target="#signupwindow"
+                style="color: white"
+                >Login<i class="fas fa-sign-in-alt"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                data-toggle="modal"
+                data-target="#popUpWindow"
+                style="color: white"
+                >Signup<i class="fas fa-user-plus"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <form role="form" id="form1">
+      <div class="modal fade" id="popUpWindow">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- header -->
+            <div class="modal-header">
+              <h3 class="modal-title">Signup Page</h3>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+            <!-- body (form) -->
+            <div class="modal-body">
+              <div class="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
+                  required=""
+                  class="form-control"
+                /><br />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Username"
+                  required=""
+                  class="form-control"
+                /><br />
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  required=""
+                  class="form-control"
+                /><br />
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  name="passwordConf"
+                  placeholder="Confirm Password"
+                  required=""
+                  class="form-control"
+                /><br />
+              </div>
+            </div>
+            <!--                  <div class="checkbox">-->
+            <!--     <label><input type="checkbox" name="remember"> Remember me</label>-->
+            <!--</div>-->
+            <div class="modal-footer">
+              <button class="btn btn-primary btn-block" type="submit">
+                Submit
+              </button>
+            </div>
+            <div class="mssg bg-danger">
+              <span id="checkRegister"></span>
+            </div>
+            <div>
+              <span>Already Registered! <a href="/login">Login</a></span>
+            </div>
+            <!-- button -->
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <form role="form" id="formLogin">
+      <div class="modal fade" id="signupwindow">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- header -->
+            <div class="modal-header">
+              <h3 class="modal-title">Login Page</h3>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+
+            <!-- body (form) -->
+            <div class="modal-body">
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="E-mail"
+                  required=""
+                  class="form-control"
+                /><br />
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  required=""
+                  class="form-control"
+                /><br />
+              </div>
+              <div class="form-group"></div>
+              <!--<div class="checkbox">-->
+              <!--   	<label><input type="checkbox" name="remember"> Remember me</label>-->
+              <!--</div>-->
+            </div>
+
+            <!-- button -->
+            <div class="modal-footer">
+              <button class="btn btn-primary btn-block" type="submit">
+                Submit
+              </button>
+            </div>
+            <div class="mssg bg-danger">
+              <span id="checkLogin"></span>
+            </div>
+            <div>
+              <span>Do you forgot password?</span
+              ><a href="/forgetpass">Click here</a>
+              <div>
+                <span>Create a new Account?</span><a href="/">Register here</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="container">
+      <form id="formFlight">
+        <div>
+          <input
+            class="search-form from"
+            type="text"
+            name="source"
+            placeholder="Source"
+            required
+            value="Wrocław"
+          />
+        </div>
+        <div class="switch-places"></div>
+        <div class="to">
+          <input
+            class="search-form"
+            id="destination"
+            type="text"
+            name="dest"
+            placeholder="Destination"
+            required
+          />
+        </div>
+        <div class="date">
+          <!--*/ %>-->
+          <input
+            class="search-form"
+            type="date"
+            name="depDate"
+            placeholder="Departure Date"
+            id="dateFlight"
+          />
+        </div>
+        <div class="options">
+          <input
+            class="search-form"
+            type="number"
+            name="totalPeople"
+            placeholder="No. Of People"
+            required
+            min="1"
+            id="people"
+          />
+        </div>
+        <button
+          class="search-button btn btn-primary"
+          type="submit"
+          data-metric="search-form submit"
+        >
+          Find
+        </button>
+      </form>
+    </div>
+    <div id="flight" style="display: none; margin-top: 20px">
+      <div class="profile-content">
+        <div
+          class="container"
+          style="
+            padding-bottom: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            color: #5a7391;
+            font-weight: 600;
+          "
+        >
+          <div class="row panel img-thumbnail img-fluid">
+            <div class="col-lg-2 col-sm-2">Company</div>
+            <div class="col-lg-2 col-sm-2">Departure</div>
+            <div class="col-lg-2 col-sm-2">Arrival</div>
+            <!--<div class="col-lg-2 col-sm-2">-->
+            <!--    Departure Date-->
+            <!--</div>-->
+            <div class="col-lg-2 col-sm-2">Economy</div>
+            <div class="col-lg-2 col-sm-2">Business</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="flightLondon" style="display: none">
+      <div class="container">
+        <div class="col-md-12">
+          <div class="profile-content">
+            <div class="container" style="color: black">
+              <div
+                class="container"
+                style="padding-bottom: 30px; color: #5a7391; font-weight: 600"
+              >
+                <div class="row panel img-thumbnail img-fluid" id="my">
+                  <div class="col-lg-2 col-sm-2">British Airways</div>
+                  <div class="col-lg-2 col-sm-2">18:00</div>
+                  <div class="col-lg-2 col-sm-2">20:00</div>
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="radio" name="Price" value="100" required /><i
+                      class="fas fa-rupee-sign"
+                    ></i
+                    >100
+                  </div>
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="radio" name="Price" value="100" required /><i
+                      class="fas fa-rupee-sign"
+                    ></i
+                    >100
+                  </div>
+                  <div class="col-lg-2 col-sm-2">
+                    <button type="submit" class="bookBtn btn btn-primary">
+                      Book
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="flightBoston" style="display: none">
+      <div class="container">
+        <div class="col-md-12">
+          <div class="profile-content">
+            <div class="container" style="color: black">
+              <div
+                class="container"
+                style="padding-bottom: 30px; color: #5a7391; font-weight: 600"
+              >
+                <div
+                  class="row panel img-thumbnail img-fluid bookFlight"
+                  id="my"
+                >
+                  <div class="col-lg-2 col-sm-2">British Airways</div>
+                  <div class="col-lg-2 col-sm-2">06:00</div>
+                  <div class="col-lg-2 col-sm-2">19:00</div>
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="radio" name="Price" value="1000" required /><i
+                      class="fas fa-rupee-sign"
+                    ></i
+                    >1000
+                  </div>
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="radio" name="Price" value="1000" required /><i
+                      class="fas fa-rupee-sign"
+                    ></i
+                    >1000
+                  </div>
+                  <div class="col-lg-2 col-sm-2">
+                    <button type="submit" class="bookBtn btn btn-primary">
+                      Book
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="flightWarsaw" style="display: none">
+      <div class="container">
+        <div class="col-md-12">
+          <div class="profile-content">
+            <div style="color: black">
+              <div
+                class="container"
+                style="padding-bottom: 30px; color: #5a7391; font-weight: 600"
+              >
+                <div
+                  class="row panel img-thumbnail img-fluid bookFlight"
+                  id="my"
+                >
+                  <div class="col-lg-2 col-sm-2">British Airways</div>
+                  <div class="col-lg-2 col-sm-2">20:00</div>
+                  <div class="col-lg-2 col-sm-2">21:00</div>
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="radio" name="Price" value="50" required /><i
+                      class="fas fa-rupee-sign"
+                    ></i
+                    >50
+                  </div>
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="radio" name="Price" value="50" required /><i
+                      class="fas fa-rupee-sign"
+                    ></i
+                    >60
+                  </div>
+                  <div class="col-lg-2 col-sm-2">
+                    <button type="submit" class="bookBtn btn btn-primary">
+                      Book
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="flightWarsawBooks" style="display: none; margin-top: 20px">
+      <div class="profile-content">
+        <div
+          class="container"
+          style="
+            padding-bottom: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            color: #5a7391;
+            font-weight: 600;
+          "
+        >
+          <div class="row panel img-thumbnail img-fluid">
+            <div class="col-lg-2 col-sm-2">Checked-in Bag</div>
+            <div class="col-lg-2 col-sm-2">Hand Luggage</div>
+            <!--<div class="col-lg-2 col-sm-2">-->
+            <!--    Departure Date-->
+            <!--</div>-->
+            <div class="col-lg-2 col-sm-2">Small Bug</div>
+            <div class="col-lg-2 col-sm-2">Seat</div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="col-md-12">
+          <div class="profile-content">
+            <div style="color: black">
+              <div
+                class="container"
+                style="padding-bottom: 30px; color: #5a7391; font-weight: 600"
+              >
+                <div
+                  class="row panel img-thumbnail img-fluid bookFlight"
+                  id="my"
+                >
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="radio" name="checkedInBag" /><i
+                      class="fas fa-rupee-sign"
+                    ></i>
+                  </div>
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="radio" name="handLuggage" /><i
+                      class="fas fa-rupee-sign"
+                    ></i>
+                  </div>
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="radio" name="smallBug" /><i
+                      class="fas fa-rupee-sign"
+                    ></i>
+                  </div>
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="text" name="seat" value="E14" required /><i
+                      class="fas fa-rupee-sign"
+                    ></i>
+                  </div>
+                  <div class="col-lg-2 col-sm-2"></div>
+                  <div class="col-lg-2 col-sm-2">
+                    <button type="submit" class="btnComplete btn btn-primary">
+                      Book
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          class="img-resp"
+          src="https://media.united.com/images/Media%20Database/SDL/Travel/inflight/aircraft/737-800/737_800_(16_150)_V1_Vyku_1136x325px.jpg"
+        />
+      </div>
+    </div>
+    <div id="flightLondonBooks" style="display: none; margin-top: 20px">
+      <div class="profile-content">
+        <div
+          class="container"
+          style="
+            padding-bottom: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            color: #5a7391;
+            font-weight: 600;
+          "
+        >
+          <div class="row panel img-thumbnail img-fluid">
+            <div class="col-lg-2 col-sm-2">Checked-in Bag</div>
+            <div class="col-lg-2 col-sm-2">Hand Luggage</div>
+            <!--<div class="col-lg-2 col-sm-2">-->
+            <!--    Departure Date-->
+            <!--</div>-->
+            <div class="col-lg-2 col-sm-2">Small Bug</div>
+            <div class="col-lg-2 col-sm-2">Seat</div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="col-md-12">
+          <div class="profile-content">
+            <div style="color: black">
+              <div
+                class="container"
+                style="padding-bottom: 30px; color: #5a7391; font-weight: 600"
+              >
+                <div
+                  class="row panel img-thumbnail img-fluid bookFlight"
+                  id="my"
+                >
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="radio" name="checkedInBag" /><i
+                      class="fas fa-rupee-sign"
+                    ></i>
+                  </div>
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="radio" name="handLuggage" /><i
+                      class="fas fa-rupee-sign"
+                    ></i>
+                  </div>
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="radio" name="smallBug" /><i
+                      class="fas fa-rupee-sign"
+                    ></i>
+                  </div>
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="text" name="seat" value="E14" required /><i
+                      class="fas fa-rupee-sign"
+                    ></i>
+                  </div>
+                  <div class="col-lg-2 col-sm-2"></div>
+                  <div class="col-lg-2 col-sm-2">
+                    <button type="submit" class="btnComplete btn btn-primary">
+                      Book
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          class="img-resp"
+          src="https://media.united.com/images/Media%20Database/SDL/Travel/inflight/aircraft/737-800/737_800_(16_150)_V1_Vyku_1136x325px.jpg"
+        />
+      </div>
+    </div>
+    <div id="flightBostonBooks" style="display: none; margin-top: 20px">
+      <div class="profile-content">
+        <div
+          class="container"
+          style="
+            padding-bottom: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            color: #5a7391;
+            font-weight: 600;
+          "
+        >
+          <div class="row panel img-thumbnail img-fluid">
+            <div class="col-lg-2 col-sm-2">Checked-in Bag</div>
+            <div class="col-lg-2 col-sm-2">Hand Luggage</div>
+            <!--<div class="col-lg-2 col-sm-2">-->
+            <!--    Departure Date-->
+            <!--</div>-->
+            <div class="col-lg-2 col-sm-2">Small Bug</div>
+            <div class="col-lg-2 col-sm-2">Seat</div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="col-md-12">
+          <div class="profile-content">
+            <div style="color: black">
+              <div
+                class="container"
+                style="padding-bottom: 30px; color: #5a7391; font-weight: 600"
+              >
+                <div
+                  class="row panel img-thumbnail img-fluid bookFlight"
+                  id="my"
+                >
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="radio" name="checkedInBag" /><i
+                      class="fas fa-rupee-sign"
+                    ></i>
+                  </div>
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="radio" name="handLuggage" /><i
+                      class="fas fa-rupee-sign"
+                    ></i>
+                  </div>
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="radio" name="smallBug" /><i
+                      class="fas fa-rupee-sign"
+                    ></i>
+                  </div>
+                  <div class="col-lg-2 col-sm-2">
+                    <input type="text" name="seat" value="E14" required /><i
+                      class="fas fa-rupee-sign"
+                    ></i>
+                  </div>
+                  <div class="col-lg-2 col-sm-2"></div>
+                  <div class="col-lg-2 col-sm-2">
+                    <button type="submit" class="btnComplete btn btn-primary">
+                      Book
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          class="img-resp"
+          src="https://media.united.com/images/Media%20Database/SDL/Travel/inflight/aircraft/777-300-336240-v2.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="profile-content"
+      id="complete"
+      style="display: none; margin-top: 30px"
+    >
+      <div
+        class="container"
+        style="
+          padding-bottom: 30px;
+          padding-left: 30px;
+          padding-right: 30px;
+          color: #5a7391;
+          font-weight: 600;
+        "
+      >
+        <div class="row panel img-thumbnail img-fluid">
+          <div id="comSour" class="col-lg-2 col-sm-2">Source: Wrocław</div>
+          <div id="comDest" class="col-lg-2 col-sm-2">Destination: Boston</div>
+          <div id="comDate" class="col-lg-2 col-sm-2">Date : 2021-02-23</div>
+          <div id="comBag" class="col-lg-2 col-sm-2">Bag</div>
+          <div id="comSet" class="col-lg-2 col-sm-2">Seat</div>
+          <div id="comPrice" class="col-lg-2 col-sm-2">
+            Price
+            <select>
+              <option>USD</option>
+              <option>PLN</option>
+              <option>EUR</option>
+            </select>
+          </div>
+          <div class="row col-lg-6">
+            <button id="finish" class="btn btn-secondary">Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="cards">
+      <div class="row panel text-center">
+        <div class="col-lg-4 col-md-4 col-sm-6" style="padding: 10px">
+          <div class="img-thumbnail img-fluid thumb-div">
+            <div id="slideshow">
+              <div>
+                <img
+                  class="card-img-top mySlides1"
+                  src="https://imgak.mmtcdn.com/pwa-hlp/assets/img/hlp/deals/ic-flight-16.jpg"
+                  style="width: 100%"
+                />
+              </div>
+              <div>
+                <img
+                  class="card-img-top mySlides1"
+                  src="https://imgak.mmtcdn.com/pwa-hlp/assets/img/hlp/deals/ic-flight-11.jpg"
+                  style="width: 100%"
+                />
+              </div>
+              <div>
+                <img
+                  class="card-img-top mySlides1"
+                  src="https://imgak.mmtcdn.com/pwa-hlp/assets/img/hlp/deals/ic-flight-14.jpg"
+                  style="width: 100%"
+                />
+              </div>
+            </div>
+            <div class="hello-div">
+              <h5 class="card-title">Warsaw</h5>
+              <h6 class="card-title">
+                Cheapest flights to Warsaw
+                <br />
+                Upto 10% off
+              </h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6" style="padding: 10px">
+          <div class="img-thumbnail img-fluid thumb-div">
+            <div id="slideshow1">
+              <div>
+                <img
+                  class="card-img-top mySlides1"
+                  src="https://imgak.mmtcdn.com/pwa-hlp/assets/img/hlp/deals/ic-flight-11.jpg"
+                  style="width: 100%"
+                />
+              </div>
+              <div>
+                <img
+                  class="card-img-top mySlides1"
+                  src="https://imgak.mmtcdn.com/pwa-hlp/assets/img/hlp/deals/ic-flight-14.jpg"
+                  style="width: 100%"
+                />
+              </div>
+              <div>
+                <img
+                  class="card-img-top mySlides1"
+                  src="https://imgak.mmtcdn.com/pwa-hlp/assets/img/hlp/deals/ic-flight-16.jpg"
+                  style="width: 100%"
+                />
+              </div>
+            </div>
+
+            <div class="hello-div">
+              <h5 class="card-title">Boston</h5>
+              <h6 class="card-title">
+                Cheapest flights to Boston
+                <br />
+                Upto 20% off
+              </h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6" style="padding: 10px">
+          <div class="img-thumbnail img-fluid thumb-div flip-card">
+            <div id="slideshow2">
+              <div>
+                <img
+                  class="card-img-top mySlides1"
+                  src="https://imgak.mmtcdn.com/pwa-hlp/assets/img/hlp/deals/ic-flight-14.jpg"
+                  style="width: 100%"
+                />
+              </div>
+              <div>
+                <img
+                  class="card-img-top mySlides1"
+                  src="https://imgak.mmtcdn.com/pwa-hlp/assets/img/hlp/deals/ic-flight-16.jpg"
+                  style="width: 100%"
+                />
+              </div>
+              <div>
+                <img
+                  class="card-img-top mySlides1"
+                  src="https://imgak.mmtcdn.com/pwa-hlp/assets/img/hlp/deals/ic-flight-11.jpg"
+                  style="width: 100%"
+                />
+              </div>
+            </div>
+
+            <div class="hello-div">
+              <h5 class="card-title">London</h5>
+              <h6 class="card-title">
+                Cheapest flights to London
+                <br />
+                Upto 15% off
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div id="cityList" class="row panel text-center"></div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#cards").animate({ opacity: 1 }, 2000);
+      });
+      $("#slideshow > div:gt(0)").hide();
+
+      setInterval(function () {
+        $("#slideshow > div:first")
+          .fadeOut(2000)
+          .next()
+          .fadeIn(2000)
+          .end()
+          .appendTo("#slideshow");
+      }, 4000);
+    </script>
+
+    <script>
+      $("#slideshow1 > div:gt(0)").hide();
+
+      setInterval(function () {
+        $("#slideshow1 > div:first")
+          .fadeOut(2000)
+          .next()
+          .fadeIn(2000)
+          .end()
+          .appendTo("#slideshow1");
+      }, 4000);
+    </script>
+
+    <script>
+      $("#slideshow2 > div:gt(0)").hide();
+
+      setInterval(function () {
+        $("#slideshow2 > div:first")
+          .fadeOut(2000)
+          .next()
+          .fadeIn(2000)
+          .end()
+          .appendTo("#slideshow2");
+      }, 4000);
+    </script>
+  </body>
+</html>
